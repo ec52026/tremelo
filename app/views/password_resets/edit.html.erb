@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 text-left">
+        	<h3 class="section-heading">Change Your Password</h3>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<%= form_for @user, url: password_reset_path(@user.password_reset_token), html: { method: :patch } do |form| %>
+
+			  <%= form.label :password %>
+			  <%= form.password_field :password %>
+
+			  <br />
+
+			  <%= form.label :password_confirmation, "Password (again)" %>
+			  <%= form.password_field :password_confirmation %>
+			  <br />
+
+			  <%= submit_tag "Change Password" %>
+			<% end %>
+		</div>
+	</div>
+</div>
